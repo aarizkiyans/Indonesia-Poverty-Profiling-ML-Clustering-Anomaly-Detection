@@ -227,4 +227,5 @@ Berdasarkan data, berikut rekomendasi untuk pemangku kebijakan:
 **Muhammad Rizkiyanto**
 * [LinkedIn](https://www.linkedin.com/in/muhammad-rizkiyanto/)
 * [Medium](https://medium.com/@aarizkiyans)
+* [Article](https://medium.com/@aarizkiyans/its-not-just-about-sanitation-uncovering-the-real-roots-of-poverty-in-indonesia-with-data-science-60870ca1d30e)
 * [Github](https://github.com/aarizkiyans/)
