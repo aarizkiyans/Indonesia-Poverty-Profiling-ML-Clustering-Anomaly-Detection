@@ -106,19 +106,17 @@ Berikut adalah penjelasan detail dari visualisasi yang dihasilkan dalam analisis
 > *Visualisasi: Heatmap Correlation Matrix. Warna merah pekat menunjukkan korelasi positif yang sangat kuat (nilai mendekati 1.00), sedangkan warna biru menunjukkan korelasi negatif kuat.*
 
 * **Observasi:** 
- **Klaster Merah (Pojok Kiri Atas & Kanan Bawah):** Terlihat kotak-kotak merah menyala dengan nilai korelasi sangat tinggi (0.92 - 1.00) pada kelompok variabel kemiskinan (persentase penduduk miskin, P1, P2) dan kelompok pengeluaran makanan (PKP).
-
- **Hubungan Sektor Pekerjaan:** Variabel 'Bekerja di sektor informal' memiliki korelasi positif kuat dengan 'Bekerja di sektor pertanian' (0.83), namun berkorelasi negatif kuat dengan 'Tidak bekerja' (-0.81).
+  * **Klaster Merah (Pojok Kiri Atas & Kanan Bawah):** Terlihat kotak-kotak merah menyala dengan nilai korelasi sangat tinggi (0.92 - 1.00) pada kelompok variabel kemiskinan (persentase penduduk miskin, P1, P2) dan kelompok pengeluaran makanan (PKP). **Hubungan Sektor Pekerjaan:** Variabel 'Bekerja di sektor informal' memiliki korelasi positif kuat dengan 'Bekerja di sektor pertanian' (0.83), namun berkorelasi negatif kuat dengan 'Tidak bekerja' (-0.81).
 
 * **Insight:** 
- **Data Redundan (Tumpang Tindih):** Variabel P0, P1, dan P2 mengukur hal yang hampir sama. Hal yang sama berlaku untuk variabel pengeluaran makanan. Oleh karena itu, dilakukan penggabungan variabel P0, P1, dan P2 menggunakan PCA untuk mengambil pola dari ketiga variabel itu dan menjadikannya variabel baru indeks kemiskinan gabungan.
+  * **Data Redundan (Tumpang Tindih):** Variabel P0, P1, dan P2 mengukur hal yang hampir sama. Hal yang sama berlaku untuk variabel pengeluaran makanan. Oleh karena itu, dilakukan penggabungan variabel P0, P1, dan P2 menggunakan PCA untuk mengambil pola dari ketiga variabel itu dan menjadikannya variabel baru indeks kemiskinan gabungan.
 
- **Identitas Sektor:** Tingginya korelasi antara "Sektor Pertanian" dan "Sektor Informal" mengonfirmasi bahwa di wilayah studi ini, mayoritas pekerjaan pertanian bersifat informal.
+  * **Identitas Sektor:** Tingginya korelasi antara "Sektor Pertanian" dan "Sektor Informal" mengonfirmasi bahwa di wilayah studi ini, mayoritas pekerjaan pertanian bersifat informal.
 
- **Konfirmasi Paradoks Pengangguran:** Korelasi negatif (-0.81) antara "Tidak Bekerja" dan "Sektor Informal" menguatkan temuan di grafik D sebelumnya: Jika pengangguran turun, sektor informal naik (orang beralih ke kerja serabutan, bukan ke kerja formal).
+  * **Konfirmasi Paradoks Pengangguran:** Korelasi negatif (-0.81) antara "Tidak Bekerja" dan "Sektor Informal" menguatkan temuan di grafik D sebelumnya: Jika pengangguran turun, sektor informal naik (orang beralih ke kerja serabutan, bukan ke kerja formal).
 
 ### F. Menentukan Klaster Terbaik Menggunakan Silhouette Index 
-![Sil_Score](sil_score/1.png)
+![Sil_Score](images/sil_score.png)
 > *Visualisasi: Line Chart yang menunjukkan nilai 'Silhouette Score' (Sumbu Y) terhadap jumlah 'Clusters' (Sumbu X) dari k=2 hingga k=5.*
 
 * **Observasi:** Terlihat tren menurun yang sangat jelas. Nilai Silhouette Score tertinggi berada pada titik 2 Cluster (nilai di atas 0.62). Setelah itu, skor terus turun secara tajam saat jumlah cluster ditambah menjadi 3, 4, dan 5.
@@ -145,28 +143,28 @@ Karena data memiliki banyak dimensi (Kemiskinan, Pendidikan, Ketenagakerjaan, Pe
 > *Visualisasi: Horizontal Bar Chart yang mengurutkan Kabupaten/Kota berdasarkan 'Indeks Kemiskinan' (Sumbu X). Semakin panjang batang (ke kanan), semakin tinggi nilai indeks kemiskinannya.*
 
 * **Observasi:** 
- **Lonjakan Ekstrem di Supiori:** Kabupaten Supiori (batang paling bawah) memiliki nilai Indeks Kemiskinan yang sangat mencolok, mendekati angka 12. Nilai ini hampir dua kali lipat lebih tinggi dibandingkan wilayah di urutan kedua (Puncak Jaya, kisaran 7) dan ketiga (Kepulauan Yapen).
+  * **Lonjakan Ekstrem di Supiori:** Kabupaten Supiori (batang paling bawah) memiliki nilai Indeks Kemiskinan yang sangat mencolok, mendekati angka 12. Nilai ini hampir dua kali lipat lebih tinggi dibandingkan wilayah di urutan kedua (Puncak Jaya, kisaran 7) dan ketiga (Kepulauan Yapen).
  
- **Sebaran Gradual**: Wilayah lain dari Tambrauw hingga Jayawijaya memiliki kenaikan nilai yang relatif bertahap (gradual) di kisaran angka 3 hingga 6. Tidak ada lompatan drastis selain pada Supiori.
+  * **Sebaran Gradual**: Wilayah lain dari Tambrauw hingga Jayawijaya memiliki kenaikan nilai yang relatif bertahap (gradual) di kisaran angka 3 hingga 6. Tidak ada lompatan drastis selain pada Supiori.
  sup
 * **Insight:** 
- **Prioritas Utama Intervensi:** Supiori merupakan outlier yang sangat jelas. Jika "Indeks Kemiskinan" ini menggambarkan tingkat keparahan (seperti Poverty Severity Index), maka kondisi kemiskinan di Supiori jauh lebih akut dibandingkan tetangganya dan memerlukan penanganan darurat atau strategi yang berbeda total dari wilayah lain. 
+  * **Prioritas Utama Intervensi:** Supiori merupakan outlier yang sangat jelas. Jika "Indeks Kemiskinan" ini menggambarkan tingkat keparahan (seperti Poverty Severity Index), maka kondisi kemiskinan di Supiori jauh lebih akut dibandingkan tetangganya dan memerlukan penanganan darurat atau strategi yang berbeda total dari wilayah lain. 
 
- **Pola Wilayah Pegunungan:** Kebanyakan provinsi yang tertinggal merupakan daerah pegunungan yang aksesnya sulit dijangkau. Ini menjadi tantangan dalam pembangunan infrastuktrur pada pola wilayah seperti ini. 
+  * **Pola Wilayah Pegunungan:** Kebanyakan provinsi yang tertinggal merupakan daerah pegunungan yang aksesnya sulit dijangkau. Ini menjadi tantangan dalam pembangunan infrastuktrur pada pola wilayah seperti ini. 
 
 ### J. Plotting Provinsi Berdasarkan Kota Tertinggal yang Disarankan Mendapat Perhatian Khusus 
 ![Plot](images/Plot2.png)
 > *Visualisasi: Horizontal Bar Chart yang mengurutkan Provinsi berdasarkan 'Indeks Kemiskinan' (Sumbu X). Nilai positif (batang ke kanan) menunjukkan tingkat kemiskinan yang tinggi/parah, sedangkan nilai negatif (batang ke kiri) menunjukkan kondisi yang relatif lebih baik (tingkat kemiskinan di bawah rata-rata).*
 
 * **Observasi:** 
- **Dominasi Total Wilayah Papua:** Lima peringkat teratas secara eksklusif diduduki oleh provinsi-provinsi di Pulau Papua (Papua, Papua Tengah, Papua Pegunungan, Papua Barat, dan Papua Barat Daya). Nilai indeks mereka sangat mencolok, berkisar antara 2.5 hingga 4.0.
+  * **Dominasi Total Wilayah Papua:** Lima peringkat teratas secara eksklusif diduduki oleh provinsi-provinsi di Pulau Papua (Papua, Papua Tengah, Papua Pegunungan, Papua Barat, dan Papua Barat Daya). Nilai indeks mereka sangat mencolok, berkisar antara 2.5 hingga 4.0.
  
- **Kontras Kalimantan & Sulawesi:** Di sisi bawah grafik, provinsi-provinsi di Kalimantan (seperti Kalimantan Selatan, Utara, Timur) dan sebagian Sulawesi (Utara, Selatan) memiliki nilai indeks negatif. Batang mereka mengarah ke kiri, menandakan tingkat kemiskinan mereka jauh lebih rendah dibandingkan kelompok Papua. 
+  * **Kontras Kalimantan & Sulawesi:** Di sisi bawah grafik, provinsi-provinsi di Kalimantan (seperti Kalimantan Selatan, Utara, Timur) dan sebagian Sulawesi (Utara, Selatan) memiliki nilai indeks negatif. Batang mereka mengarah ke kiri, menandakan tingkat kemiskinan mereka jauh lebih rendah dibandingkan kelompok Papua. 
 
 * **Insight:** 
- **Ketimpangan Wilayah yang Akut:** Grafik ini mengonfirmasi bahwa kantong kemiskinan di wilayah studi ini sangat terpusat secara geografis. Wilayah Papua menghadapi tantangan struktural yang jauh lebih berat dibandingkan tetangganya di Sulawesi dan Kalimantan.
+  * **Ketimpangan Wilayah yang Akut:** Grafik ini mengonfirmasi bahwa kantong kemiskinan di wilayah studi ini sangat terpusat secara geografis. Wilayah Papua menghadapi tantangan struktural yang jauh lebih berat dibandingkan tetangganya di Sulawesi dan Kalimantan.
  
- **Pemekaran Belum Menjadi Solusi Instan:** Fakta bahwa provinsi hasil pemekaran (seperti Papua Tengah dan Papua Pegunungan) masih berada di urutan teratas menunjukkan bahwa perubahan administrasi wilayah belum serta-merta menghilangkan beban kemiskinan yang diwariskan. 
+  * **Pemekaran Belum Menjadi Solusi Instan:** Fakta bahwa provinsi hasil pemekaran (seperti Papua Tengah dan Papua Pegunungan) masih berada di urutan teratas menunjukkan bahwa perubahan administrasi wilayah belum serta-merta menghilangkan beban kemiskinan yang diwariskan. 
 
 ### K. Feature Importance (Random Forest Results)
 ![Plot](images/Plot3.png)
